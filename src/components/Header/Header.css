@@ -1,0 +1,105 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vh 2.5vw;
+}
+
+header>div {
+    width: 33.33%;
+}
+
+/*! HEADEAR LEFT */
+.headLeft p {
+    font-weight: 200;
+    opacity: 75%;
+    text-align: left;
+}
+
+.headLeft .pName {
+    font-size: 1.5rem;
+    opacity: 1;
+    font-weight: 600;
+}
+
+/*! HEADER CENTER */
+.headCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Bottone effetto vetro */
+.acrylicBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    height: 60px;
+    border-radius: 36px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --light-x: 50%;
+    --light-y: 50%;
+    padding: 5px;
+}
+
+.acrylicBox>p {
+    width: 50%;
+    text-align: center;
+}
+
+/* Pseudo-elemento per il bagliore */
+.acrylicBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--light-x) var(--light-y),
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Quando il mouse è “vicino” */
+.acrylicBox.light-on::before {
+    opacity: 0.3;
+}
+
+.selectedBox {
+    position: absolute;
+    width: 50%;
+    height: 60px;
+    border-radius: 36px;
+    background-color: rgba(63, 63, 63, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.selectedBox.work {
+    left: 5px;
+}
+
+.selectedBox.aboutMe {
+    left: calc(100% - 50% - 5px);
+}
+
+/*! HEADER RIGHT */
+.headRight {
+    text-align: right;
+}
