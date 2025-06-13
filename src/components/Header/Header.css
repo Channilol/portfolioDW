@@ -13,7 +13,7 @@ header>div {
     width: 33.33%;
 }
 
-/*! HEADEAR LEFT */
+/*? HEADEAR LEFT */
 .headLeft p {
     font-weight: 200;
     opacity: 75%;
@@ -26,7 +26,7 @@ header>div {
     font-weight: 600;
 }
 
-/*! HEADER CENTER */
+/*? HEADER CENTER */
 .headCenter {
     display: flex;
     flex-direction: row;
@@ -40,7 +40,7 @@ header>div {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 250px;
+    width: 330px;
     height: 60px;
     border-radius: 36px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -52,11 +52,19 @@ header>div {
     --light-x: 50%;
     --light-y: 50%;
     padding: 5px;
+    cursor: pointer;
 }
 
 .acrylicBox>p {
-    width: 50%;
+    width: 33.3%;
     text-align: center;
+    transition: .2s ease-in-out .1s;
+}
+
+.darkShadowText {
+    /* font-size: 1.2rem; */
+    font-weight: 700;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
 /* Pseudo-elemento per il bagliore */
@@ -82,15 +90,16 @@ header>div {
 
 .selectedBox {
     position: absolute;
-    width: 50%;
+    width: 33.3%;
     height: 60px;
     border-radius: 36px;
     background-color: rgba(37, 37, 37, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(180, 180, 180, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
 }
 
 .selectedBox.work {
@@ -98,10 +107,101 @@ header>div {
 }
 
 .selectedBox.aboutMe {
-    left: calc(100% - 50% - 5px);
+    left: calc(100% - 66.6% - 5px);
 }
 
-/*! HEADER RIGHT */
+.selectedBox.Contacts {
+    left: calc(100% - 33.3% - 5px);
+}
+
+@keyframes bubble-soft {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(0.9, 1.05);
+    }
+
+    /* piccola deformazione */
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* Classe che applica l'animazione soft */
+.selectedBox.bubble {
+    animation: bubble-soft 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cvBtn.bubble {
+    animation: bubble-soft 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+.selectedBox::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 30%;
+    width: 40%;
+    height: 50%;
+    background: radial-gradient(ellipse at top center,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 80%);
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/*? HEADER RIGHT */
 .headRight {
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.cvBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 70px;
+    border-radius: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    --light-x: 50%;
+    --light-y: 50%;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+
+.cvBtn {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cvBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--light-x) var(--light-y),
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.cvBtn.light-on::before {
+    opacity: 0.3;
 }

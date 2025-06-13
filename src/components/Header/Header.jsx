@@ -1,37 +1,75 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Header.css'
 
 export default function Header() {
-  const [lightOn, setLightOn] = useState(false)
-  const [lightPos, setLightPos] = useState({ x: '50%', y: '50%' })
+  const [boxLightOn, setBoxLightOn] = useState(false);
+  const [boxLightPos, setBoxLightPos] = useState({ x: '50%', y: '50%' });
+  const [btnLightOn, setBtnLightOn] = useState(false);
+  const [btnLightPos, setBtnLightPos] = useState({ x: '50%', y: '50%' });
   const [selectedBox, setSelectedBox] = useState('work');
+  const boxRef = useRef(null);
+  const btnRef = useRef(null);
 
-  const MARGIN = 50; // distanza extra in px
+  // Ogni volta che selectedBox cambia, triggero l'animazione
+  useEffect(() => {
+    const node = boxRef.current;
+    if (!node) return;
 
-  const handleMouseMove = e => {
+    // Rimuovo e riaggiungo la classe per riavviare l'animazione
+    node.classList.remove('bubble');
+    // forzo reflow per essere sicuro che la rimozione venga presa
+    void node.offsetWidth;
+    node.classList.add('bubble');
+  }, [selectedBox]);
+
+  const _margin = 50;
+
+  const handleBoxMouseMove = e => {
     const rect = e.currentTarget.getBoundingClientRect();
-
-    // Verifico se il cursore è entro rect esteso di MARGIN px su ogni lato
-    const withinX = e.clientX >= rect.left - MARGIN && e.clientX <= rect.right + MARGIN;
-    const withinY = e.clientY >= rect.top - MARGIN && e.clientY <= rect.bottom + MARGIN;
-
+    const withinX = e.clientX >= rect.left - _margin && e.clientX <= rect.right + _margin;
+    const withinY = e.clientY >= rect.top - _margin && e.clientY <= rect.bottom + _margin;
     if (withinX && withinY) {
-      setLightOn(true);
-
-      // Per posizionare il bagliore correttamente dentro la box,
-      // clampo le coordinate all’interno dei bordi (0–100%)
+      setBoxLightOn(true);
       const rawX = ((e.clientX - rect.left) / rect.width) * 100;
       const rawY = ((e.clientY - rect.top) / rect.height) * 100;
-      const x = Math.min(100, Math.max(0, rawX)) + '%';
-      const y = Math.min(100, Math.max(0, rawY)) + '%';
-      setLightPos({ x, y });
-    }
-    else {
-      setLightOn(false);
+      setBoxLightPos({
+        x: `${Math.min(100, Math.max(0, rawX))}%`,
+        y: `${Math.min(100, Math.max(0, rawY))}%`
+      });
+    } else {
+      setBoxLightOn(false);
     }
   };
+  const handleBoxMouseLeave = () => setBoxLightOn(false);
 
-  const handleMouseLeave = () => setLightOn(false);
+  const handleBtnMouseMove = e => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const withinX = e.clientX >= rect.left - _margin && e.clientX <= rect.right + _margin;
+    const withinY = e.clientY >= rect.top - _margin && e.clientY <= rect.bottom + _margin;
+    if (withinX && withinY) {
+      setBtnLightOn(true);
+      const rawX = ((e.clientX - rect.left) / rect.width) * 100;
+      const rawY = ((e.clientY - rect.top) / rect.height) * 100;
+      setBtnLightPos({
+        x: `${Math.min(100, Math.max(0, rawX))}%`,
+        y: `${Math.min(100, Math.max(0, rawY))}%`
+      });
+    } else {
+      setBtnLightOn(false);
+    }
+  };
+  const handleBtnMouseLeave = () => setBtnLightOn(false);
+
+  // Handler che innesca l'animazione sul pulsante
+  const handleBtnPress = () => {
+    const node = btnRef.current;
+    if (!node) return;
+    // Rimuovo e riaggiungo per “riavviare” l’animazione
+    node.classList.remove('bubble');
+    void node.offsetWidth;       // forzo reflow
+    node.classList.add('bubble');
+    // → qui dentro puoi anche mettere la logica di download/apertura CV
+  };
 
   return (
     <header>
@@ -42,21 +80,35 @@ export default function Header() {
       </div>
       <div className='headCenter'>
         <div
-          className={`acrylicBox${lightOn ? ' light-on' : ''}`}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+          className={`acrylicBox${boxLightOn ? ' light-on' : ''}`}
+          onMouseMove={handleBoxMouseMove}
+          onMouseLeave={handleBoxMouseLeave}
           style={{
-            // React: per usare CSS variable devi fare un cast
-            '--light-x': lightPos.x,
-            '--light-y': lightPos.y
+            '--light-x': boxLightPos.x,
+            '--light-y': boxLightPos.y
           }}
         >
-          <p className="work" onClick={() => setSelectedBox('work')}>Work</p>
-          <p className="aboutMe" onClick={() => setSelectedBox('aboutMe')}>About me</p>
-          <div className={`selectedBox ${selectedBox}`}></div>
+          <p className={`work ${selectedBox === 'work' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('work')}>Work</p>
+          <p className={`work ${selectedBox === 'aboutMe' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('aboutMe')}>About me</p>
+          <p className={`work ${selectedBox === 'Contacts' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('Contacts')}>Contacts</p>
+          <div ref={boxRef} className={`selectedBox ${selectedBox}`}></div>
         </div>
       </div>
-      <div className='headRight'>a</div>
+      <div className='headRight'>
+        <button
+          ref={btnRef}
+          className={`cvBtn${btnLightOn ? ' light-on' : ''}`}
+          onMouseMove={handleBtnMouseMove}
+          onMouseLeave={handleBtnMouseLeave}
+          style={{
+            '--light-x': btnLightPos.x,
+            '--light-y': btnLightPos.y
+          }}
+          onClick={handleBtnPress}
+        >
+          Curriculum
+        </button>
+      </div>
     </header>
   )
 }
