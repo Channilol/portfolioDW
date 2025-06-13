@@ -8,7 +8,16 @@
                 "C#",
                 "SQL"
             ],
-            "image": ""
+            "image_url": ""
+        },
+        {
+            "nome": "Impronto Cassa",
+            "tech": [
+                "Dart",
+                "Flutter",
+                "MQTT"
+            ],
+            "image_url": ""
         }
     ]
 }
