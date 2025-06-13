@@ -1,0 +1,14 @@
+{
+    "progetti": [
+        {
+            "nome": "Pokedex",
+            "tech": [
+                "Javascript",
+                "React",
+                "C#",
+                "SQL"
+            ],
+            "image": ""
+        }
+    ]
+}

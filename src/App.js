@@ -1,12 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
+// import { ReactLenis, useLenis } from 'lenis/react'
+import ProjectList from './components/ProjectList/ProjectList';
 
 function App() {
+  // const lenis = useLenis((lenis) => { })
+
   return (
-    <div className="App">
-      <Header></Header>
-    </div>
+    <>
+      {/* <ReactLenis root /> */}
+      <div className="App">
+        <Header />
+        <ProjectList />
+      </div>
+    </>
   );
 }
 

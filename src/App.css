@@ -6,6 +6,15 @@
   padding: 0;
   margin: 0;
   user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+/* 1) Chrome, Safari e Opera */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 .App {
