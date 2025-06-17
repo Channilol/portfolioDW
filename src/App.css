@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
+:root {
+  --portfolio-bg: hsl(220, 13%, 9%);
+}
+
 * {
   font-family: "Nunito Sans", sans-serif;
   color: antiquewhite;
@@ -17,9 +21,15 @@
   display: none;
 }
 
+body {
+  background: var(--portfolio-bg);
+}
+
 .App {
   text-align: center;
-  background-image: url('../src/assets/bg_portfolio.png');
+  /* background-image: url('../src/assets/bg_portfolio.png'); */
+
+  background: radial-gradient(circle at 50% 20%, hsla(207, 90%, 54%, 0.15) 0%, transparent 50%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
