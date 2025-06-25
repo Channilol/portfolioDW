@@ -1,16 +1,18 @@
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-// import { ReactLenis, useLenis } from 'lenis/react'
 import ProjectList from './components/ProjectList/ProjectList';
 
 function App() {
-  // const lenis = useLenis((lenis) => { })
+  const [selectedBox, setSelectedBox] = useState('work');
 
   return (
     <>
-      {/* <ReactLenis root /> */}
       <div className="App">
-        <Header />
+        <Header
+          selectedBox={selectedBox}
+          setSelectedBox={setSelectedBox}
+        />
         <ProjectList />
       </div>
     </>

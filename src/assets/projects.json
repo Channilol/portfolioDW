@@ -1,22 +1,45 @@
 {
     "progetti": [
         {
-            "nome": "Pokedex",
+            "nome": "PokeCollector",
             "tech": [
-                "Javascript",
-                "React",
-                "C#",
-                "SQL"
+                {
+                    "title": "React.js",
+                    "color": "#3996b8"
+                },
+                {
+                    "title": "C#",
+                    "color": "#178600"
+                },
+                {
+                    "title": ".NET",
+                    "color": "#512bd4"
+                },
+                {
+                    "title": "SQL",
+                    "color": "#e38c00"
+                }
             ],
+            "url": "https://github.com/Channilol/PokeCollectorFRONTEND",
             "image_url": ""
         },
         {
-            "nome": "Impronto Cassa",
+            "nome": "Weather App",
             "tech": [
-                "Dart",
-                "Flutter",
-                "MQTT"
+                {
+                    "title": "Dart",
+                    "color": "#0175c2"
+                },
+                {
+                    "title": "Flutter",
+                    "color": "#02569b"
+                },
+                {
+                    "title": "MQTT",
+                    "color": "#ff9900"
+                }
             ],
+            "url": "https://github.com/Channilol/WeatherWebAppReact",
             "image_url": ""
         }
     ]

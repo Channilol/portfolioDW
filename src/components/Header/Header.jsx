@@ -1,23 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Header.css'
+import Download from '../../assets/download_icon.svg'
 
-export default function Header() {
+export default function Header({ selectedBox, setSelectedBox }) {
   const [boxLightOn, setBoxLightOn] = useState(false);
   const [boxLightPos, setBoxLightPos] = useState({ x: '50%', y: '50%' });
   const [btnLightOn, setBtnLightOn] = useState(false);
   const [btnLightPos, setBtnLightPos] = useState({ x: '50%', y: '50%' });
-  const [selectedBox, setSelectedBox] = useState('work');
+
   const boxRef = useRef(null);
   const btnRef = useRef(null);
 
-  // Ogni volta che selectedBox cambia, triggero l'animazione
   useEffect(() => {
     const node = boxRef.current;
     if (!node) return;
-
-    // Rimuovo e riaggiungo la classe per riavviare l'animazione
     node.classList.remove('bubble');
-    // forzo reflow per essere sicuro che la rimozione venga presa
     void node.offsetWidth;
     node.classList.add('bubble');
   }, [selectedBox]);
@@ -60,15 +57,18 @@ export default function Header() {
   };
   const handleBtnMouseLeave = () => setBtnLightOn(false);
 
-  // Handler che innesca l'animazione sul pulsante
   const handleBtnPress = () => {
     const node = btnRef.current;
     if (!node) return;
-    // Rimuovo e riaggiungo per “riavviare” l’animazione
     node.classList.remove('bubble');
-    void node.offsetWidth;       // forzo reflow
+    void node.offsetWidth;
     node.classList.add('bubble');
-    // → qui dentro puoi anche mettere la logica di download/apertura CV
+    const link = document.createElement('a');
+    link.href = '/assets/Francesco_Cannizzo_CV.pdf';
+    link.download = 'Francesco_Cannizzo_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -106,6 +106,7 @@ export default function Header() {
           }}
           onClick={handleBtnPress}
         >
+          <img src={Download} alt="Logo" width={24} height={24} />
           Curriculum
         </button>
       </div>
