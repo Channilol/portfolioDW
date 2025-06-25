@@ -64,7 +64,7 @@ export default function Header({ selectedBox, setSelectedBox }) {
     void node.offsetWidth;
     node.classList.add('bubble');
     const link = document.createElement('a');
-    link.href = '/assets/Francesco_Cannizzo_CV.pdf';
+    link.href = '/Francesco_Cannizzo_CV.pdf';
     link.download = 'Francesco_Cannizzo_CV.pdf';
     document.body.appendChild(link);
     link.click();
