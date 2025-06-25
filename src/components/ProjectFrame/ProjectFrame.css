@@ -3,12 +3,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-width: 350px;
+    min-width: 340px;
     width: 60vw;
     max-width: 1000px;
     min-height: 500px;
-    height: 50vh;
-    max-height: 700px;
+    height: 80vh;
+    max-height: 900px;
     border-radius: 48px;
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -109,7 +109,7 @@
     bottom: 12px;
     left: 12px;
     width: calc(100% - 24px);
-    height: 80%;
+    height: 77.5%;
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 36px;

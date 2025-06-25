@@ -33,7 +33,10 @@ header>div {
     flex-direction: row;
     justify-content: center;
     height: 100px;
+    user-select: none;
 }
+
+
 
 /* Bottone effetto vetro */
 .acrylicBox {
@@ -45,7 +48,7 @@ header>div {
     width: 330px;
     height: 60px;
     border-radius: 36px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -207,4 +210,56 @@ header>div {
 
 .cvBtn.light-on::before {
     opacity: 0.3;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        margin-top: 25vh;
+    }
+
+    .headLeft p {
+        font-weight: 300;
+        opacity: 75%;
+        text-align: center;
+    }
+
+    .headLeft .pName {
+        font-size: 3rem;
+        opacity: 1;
+        font-weight: 600;
+        line-height: 0.9;
+    }
+
+    .headCenter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        margin: 0 4% 10px 4%;
+        width: 92%;
+        height: 70px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 36px;
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .headRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header>div {
+        width: 100%;
+    }
 }

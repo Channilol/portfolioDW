@@ -21,14 +21,29 @@
   display: none;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2) Rimuove eventuali background-color in stato :active su link e bottoni */
+a:active,
+button:active,
+input:active,
+label:active {
+  background-color: transparent !important;
+}
+
+/* 3) (Opzionale) Se volessi neutralizzare anche la selezione di testo */
+*::selection {
+  background: transparent;
+}
+
 body {
   background: var(--portfolio-bg);
 }
 
 .App {
   text-align: center;
-  /* background-image: url('../src/assets/bg_portfolio.png'); */
-
   background: radial-gradient(circle at 50% 20%, hsla(207, 90%, 54%, 0.15) 0%, transparent 50%);
   background-repeat: no-repeat;
   background-position: center center;

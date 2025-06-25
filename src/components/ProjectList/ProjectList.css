@@ -10,3 +10,10 @@
     padding-top: 20vh;
     padding-bottom: 36px;
 }
+
+@media (max-width: 768px) {
+    .ProjectList {
+        padding-top: 32px;
+        padding-bottom: 90px;
+    }
+}
