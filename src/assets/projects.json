@@ -21,7 +21,7 @@
                 }
             ],
             "url": "https://github.com/Channilol/PokeCollectorFRONTEND",
-            "image_url": "src/assets/progetti/PokeCollector.png"
+            "image_file": "PokeCollector.png"
         },
         {
             "nome": "Weather App",
@@ -40,7 +40,7 @@
                 }
             ],
             "url": "https://github.com/Channilol/WeatherWebAppReact",
-            "image_url": ""
+            "image_url": "WeatherApp.png"
         }
     ]
 }
