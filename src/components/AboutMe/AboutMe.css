@@ -374,6 +374,8 @@
 }
 
 .about-content>* {
+    opacity: 0;
+    /* Inizialmente invisibili per evitare il blink */
     animation: fadeInUp 0.6s ease forwards;
 }
 
