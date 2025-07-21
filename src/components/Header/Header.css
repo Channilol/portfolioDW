@@ -115,7 +115,7 @@ header>div {
     left: calc(100% - 66.6% - 5px);
 }
 
-.selectedBox.Contacts {
+.selectedBox.contacts {
     left: calc(100% - 33.3% - 5px);
 }
 

@@ -1,0 +1,291 @@
+.contacts-container {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Header styling - uguale all'AboutMe per coerenza */
+.contacts-header {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.contacts-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.header-accent {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Buttons container */
+.contacts-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    /* Spazio per l'effetto hover */
+}
+
+/* Contact buttons styling */
+.contact-btn {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    min-width: 160px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Icon styling */
+.btn-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-icon svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+/* Text styling */
+.btn-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Individual button colors and hover effects */
+.email-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.email-btn:hover .btn-icon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);
+    transform: scale(1.1);
+}
+
+.email-btn:hover .btn-icon svg {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.linkedin-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+.linkedin-btn:hover .btn-icon {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+    transform: scale(1.1);
+}
+
+.linkedin-btn:hover .btn-icon svg {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.github-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.github-btn:hover .btn-icon {
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.3);
+    transform: scale(1.1);
+}
+
+.github-btn:hover .btn-icon svg {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Active states */
+.contact-btn:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contacts-container {
+        padding: 1.5rem;
+    }
+
+    .contacts-header {
+        margin-bottom: 3rem;
+    }
+
+    .contacts-buttons {
+        gap: 1.5rem;
+        padding: 10px 0;
+        /* Spazio ridotto per tablet */
+    }
+
+    .contact-btn {
+        padding: 1.5rem 2rem;
+        min-width: 140px;
+    }
+
+    .btn-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .btn-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .btn-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contacts-container {
+        padding: 1rem;
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 110px;
+        /* Padding bottom per mobile */
+    }
+
+    .contacts-header h1 {
+        font-size: 2rem;
+    }
+
+    .header-accent {
+        width: 60px;
+        height: 3px;
+    }
+
+    .contacts-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .contacts-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 8px 0;
+        /* Spazio ridotto per mobile */
+    }
+
+    .contact-btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 1.25rem 2rem;
+        border-radius: 16px;
+        min-width: auto;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .btn-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .btn-text {
+        font-size: 0.95rem;
+    }
+
+    /* Ridurre leggermente l'effetto hover su mobile */
+    .contact-btn:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Animazioni per l'entrata */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contacts-content>* {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.contact-btn:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-btn:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-btn:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Focus states per accessibilità */
+.contact-btn:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.6);
+    outline-offset: 4px;
+}

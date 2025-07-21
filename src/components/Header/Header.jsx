@@ -90,7 +90,7 @@ export default function Header({ selectedBox, setSelectedBox }) {
         >
           <p className={`work ${selectedBox === 'work' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('work')}>Work</p>
           <p className={`work ${selectedBox === 'aboutMe' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('aboutMe')}>About me</p>
-          <p className={`work ${selectedBox === 'Contacts' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('Contacts')}>Contacts</p>
+          <p className={`work ${selectedBox === 'contacts' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('contacts')}>Contacts</p>
           <div ref={boxRef} className={`selectedBox ${selectedBox}`}></div>
         </div>
       </div>
