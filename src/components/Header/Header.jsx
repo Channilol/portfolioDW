@@ -21,6 +21,14 @@ export default function Header({ selectedBox, setSelectedBox }) {
 
   const _margin = 50;
 
+  const scrollToTop = () => {
+    console.log('Scrolling to top, current position:', window.scrollY);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   const handleBoxMouseMove = e => {
     const rect = e.currentTarget.getBoundingClientRect();
     const withinX = e.clientX >= rect.left - _margin && e.clientX <= rect.right + _margin;
@@ -71,6 +79,7 @@ export default function Header({ selectedBox, setSelectedBox }) {
     document.body.removeChild(link);
   };
 
+
   return (
     <header>
       <div className='headLeft'>
@@ -88,9 +97,9 @@ export default function Header({ selectedBox, setSelectedBox }) {
             '--light-y': boxLightPos.y
           }}
         >
-          <p className={`work ${selectedBox === 'work' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('work')}>Work</p>
-          <p className={`work ${selectedBox === 'aboutMe' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('aboutMe')}>About me</p>
-          <p className={`work ${selectedBox === 'contacts' ? 'darkShadowText' : ''}`} onClick={() => setSelectedBox('contacts')}>Contacts</p>
+          <p className={`work ${selectedBox === 'work' ? 'darkShadowText' : ''}`} onClick={() => { scrollToTop(); setSelectedBox('work')}}>Work</p>
+          <p className={`work ${selectedBox === 'aboutMe' ? 'darkShadowText' : ''}`} onClick={() => {scrollToTop(); setSelectedBox('aboutMe')}}>About me</p>
+          <p className={`work ${selectedBox === 'contacts' ? 'darkShadowText' : ''}`} onClick={() => { scrollToTop(); setSelectedBox('contacts')}}>Contacts</p>
           <div ref={boxRef} className={`selectedBox ${selectedBox}`}></div>
         </div>
       </div>

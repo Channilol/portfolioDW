@@ -9,6 +9,8 @@ import Contacts from './components/Contacts/Contacts';
 function App() {
   const [selectedBox, setSelectedBox] = useState('work');
 
+  
+
   return (
     <>
       <SpeedInsights />
@@ -16,6 +18,7 @@ function App() {
         <Header
           selectedBox={selectedBox}
           setSelectedBox={setSelectedBox}
+          // scrollToTop={scrollToTop}
         />
         {selectedBox === 'work' ? <ProjectList /> : null}
         {selectedBox === 'aboutMe' ? <AboutMe /> : null}
