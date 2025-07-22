@@ -14,7 +14,9 @@ export default function AboutMe() {
                     <div className="intro-card">
                         <p className="intro-text">
                             Sono un ragazzo di 27 anni con formazione da perito grafico e un master in Full Stack Development
-                            conseguito presso Epicode, della durata di 6 mesi full time (8 ore al giorno).
+                            conseguito presso Epicode, della durata di 6 mesi full time (8 ore al giorno).<br/>
+                            Ho frequentato l'universitá degli stranieri di Perugia dove ho studiato comunicazione pubblicitaria, ma ho abbandonato gli studi per seguire la mia passione, ovvero il mondo del codice e del tech.<br/>
+                            Oltre all'italiano che é la mia lingua nativa, parlo molto bene inglese (livello B2/C1), spagnolo e giapponese (livello A1)
                         </p>
                     </div>
 
@@ -23,9 +25,9 @@ export default function AboutMe() {
                             <span>💻</span>
                         </div>
                         <div className="card-content">
-                            <h3>Flutter Developer</h3>
+                            <h3>Cosa faccio?</h3>
                             <p>
-                                Dal luglio 2024 lavoro come Flutter Developer, progettando e realizzando interfacce
+                                Da luglio 2024 ad oggi lavoro come Fullstack developer, utilizzando principalmente Flutter e Node.js, con un focus per la progettaono e realizzazione di interfacce
                                 UI/UX moderne, accattivanti ed estremamente intuitive.
                             </p>
                         </div>
