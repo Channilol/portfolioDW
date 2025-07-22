@@ -26,17 +26,9 @@
         {
             "nome": "Weather App",
             "tech": [
-                {
-                    "title": "Dart",
-                    "color": "#0175c2"
-                },
-                {
-                    "title": "Flutter",
-                    "color": "#02569b"
-                },
-                {
-                    "title": "MQTT",
-                    "color": "#ff9900"
+               {
+                    "title": "React.js",
+                    "color": "#3996b8"
                 }
             ],
             "url": "https://github.com/Channilol/WeatherWebAppReact",

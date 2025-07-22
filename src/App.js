@@ -9,8 +9,6 @@ import Contacts from './components/Contacts/Contacts';
 function App() {
   const [selectedBox, setSelectedBox] = useState('work');
 
-  
-
   return (
     <>
       <SpeedInsights />

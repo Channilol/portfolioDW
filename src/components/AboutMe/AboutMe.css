@@ -1,7 +1,7 @@
 .about-container {
     min-height: 100vh;
     padding: 2rem;
-    padding-top: 100px;
+    padding-top: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +41,7 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
-    padding: 12px 0;
-    /* Spazio per l'effetto hover */
+    padding: 12px 0; /* Spazio per l'effetto hover */
 }
 
 /* Cards styling with glass effect */
@@ -130,8 +129,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
-    padding: 8px 0;
-    /* Spazio per l'effetto hover delle skill cards */
+    padding: 8px 0; /* Spazio per l'effetto hover delle skill cards */
 }
 
 .skill-card {
@@ -204,6 +202,7 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    padding: 8px 0; /* Spazio per l'effetto hover */
 }
 
 .tag {
@@ -229,44 +228,43 @@
     .about-container {
         padding: 1.5rem;
     }
-
+    
     .about-header {
         margin-bottom: 2rem;
     }
-
+    
     .about-header h1 {
         font-size: 2.5rem;
     }
-
+    
     .intro-card,
     .experience-card,
     .personal-card {
         padding: 1.5rem;
     }
-
+    
     .experience-card {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
     }
-
+    
     .card-icon {
         width: 70px;
         height: 70px;
         font-size: 2.5rem;
     }
-
+    
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 6px 0;
-        /* Spazio ridotto per tablet */
+        padding: 6px 0; /* Spazio ridotto per tablet */
     }
-
+    
     .personal-tags {
         gap: 0.75rem;
     }
-
+    
     .tag {
         font-size: 0.85rem;
         padding: 0.4rem 0.8rem;
@@ -278,83 +276,82 @@
         padding: 1rem;
         min-height: auto;
         padding-top: 2rem;
-        padding-bottom: 110px;
-        /* Padding bottom per mobile */
+        padding-bottom: 110px; /* Padding bottom per mobile */
     }
-
+    
     .about-header h1 {
         font-size: 2rem;
     }
-
+    
     .header-accent {
         width: 60px;
         height: 3px;
     }
-
+    
     .intro-card,
     .experience-card,
     .personal-card {
         padding: 1.25rem;
         border-radius: 16px;
     }
-
+    
     .intro-text {
         font-size: 1rem;
     }
-
+    
     .card-icon {
         width: 60px;
         height: 60px;
         font-size: 2rem;
         border-radius: 15px;
     }
-
+    
     .card-content h3 {
         font-size: 1.25rem;
     }
-
+    
     .card-content p {
         font-size: 0.95rem;
     }
-
+    
     .skill-card {
         padding: 1.25rem;
         border-radius: 12px;
     }
-
+    
     .skill-icon {
         font-size: 2rem;
         margin-bottom: 0.75rem;
     }
-
+    
     .skill-card h4 {
         font-size: 1rem;
     }
-
+    
     .skill-card p {
         font-size: 0.85rem;
     }
-
+    
     .skills-grid {
-        padding: 4px 0;
-        /* Spazio ridotto per mobile */
+        padding: 4px 0; /* Spazio ridotto per mobile */
     }
-
+    
     .personal-content h3 {
         font-size: 1.25rem;
     }
-
+    
     .personal-content p {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
-
+    
     .personal-tags {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        padding: 6px 0; /* Spazio per hover anche su mobile */
     }
-
+    
     .tag {
         font-size: 0.8rem;
         padding: 0.35rem 0.7rem;
@@ -367,23 +364,21 @@
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.about-content>* {
-    opacity: 0;
-    /* Inizialmente invisibili per evitare il blink */
+.about-content > * {
+    opacity: 0; /* Inizialmente invisibili per evitare il blink */
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.about-content>*:nth-child(2) {
+.about-content > *:nth-child(2) {
     animation-delay: 0.1s;
 }
 
-.about-content>*:nth-child(3) {
+.about-content > *:nth-child(3) {
     animation-delay: 0.2s;
 }
