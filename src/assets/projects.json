@@ -1,5 +1,29 @@
 {
     "progetti": [
+        
+        {
+            "nome": "Pokenav (work in progress)",
+            "tech": [
+                {
+                    "title": "Dart",
+                    "color": "#0175C2"
+                },
+                {
+                    "title": "Flutter",
+                    "color": "#02569B"
+                },
+                {
+                    "title": "Stream based API",
+                    "color": "#FF6B35"
+                },
+                {
+                    "title": "Auto Caching",
+                    "color": "#8E44AD"
+                }
+            ],
+            "url": "https://github.com/Channilol/Pokenav",
+            "image_url": ""
+        },
         {
             "nome": "PokeCollector",
             "tech": [
