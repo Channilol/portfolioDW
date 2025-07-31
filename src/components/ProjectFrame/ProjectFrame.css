@@ -1,448 +1,447 @@
 .projectFrame {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 340px;
-    width: 60vw;
-    max-width: 1000px;
-    min-height: 500px;
-    height: 80vh;
-    max-height: 900px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 340px;
+  width: 60vw;
+  max-width: 1000px;
+  min-height: 600px;
+  height: 80vh;
+  max-height: 1100px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
 
-    /* Transizioni fluide */
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(0) scale(1);
+  /* Transizioni fluide */
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0) scale(1);
 }
 
 /* Gradient overlay per profondità */
 .projectGradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    pointer-events: none;
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 /* Border effect */
 .projectBorder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: exclude;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 /* Stato illuminato */
 .projectFrame.illuminated {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow:
-        0 12px 48px rgba(0, 0, 0, 0.4),
-        0 0 60px rgba(102, 126, 234, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: translateY(-8px) scale(1.02);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 60px rgba(102, 126, 234, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
 }
 
 .projectFrame.illuminated .projectGradient {
-    opacity: 1;
+  opacity: 1;
 }
 
 .projectFrame.illuminated .projectBorder {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Contenuto principale */
 .projectContent {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    overflow: hidden;
-    /* Previene lo sforamento degli elementi */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  /* Previene lo sforamento degli elementi */
 }
 
 /* Header con titolo e tech */
 .projectHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0 20px 8px 20px;
-    /* Padding per evitare sforamenti + spazio per hover */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 20px 8px 20px;
+  /* Padding per evitare sforamenti + spazio per hover */
 }
 
 .projectInfo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .projectTitle {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-    background: linear-gradient(135deg, #ffffff, #e0e0e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.6s ease;
-    text-align: center;
-    /* Centrato perfettamente */
-    width: 100%;
-    /* Occupa tutta la larghezza per centratura */
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s ease;
+  text-align: center;
+  /* Centrato perfettamente */
+  width: 100%;
+  /* Occupa tutta la larghezza per centratura */
 }
 
 .projectFrame.illuminated .projectTitle {
-    text-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.3),
-        0 0 30px rgba(255, 255, 255, 0.4);
-    /* Rimuovo il translateX per mantenere la centratura */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+  /* Rimuovo il
+   translateX per mantenere la centratura */
+}
+
+.projectDesc {
+  position: relative;
 }
 
 /* Tecnologie */
 .projectTech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    transition: all 0.6s ease;
-    justify-content: center;
-    /* Centrato come il titolo */
-    padding: 8px 0;
-    /* Spazio per l'hover delle tech */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  transition: all 0.6s ease;
+  justify-content: center;
+  /* Centrato come il titolo */
+  padding: 8px 0;
+  /* Spazio per l'hover delle tech */
 }
 
 .projectFrame.illuminated .projectTech {
-    /* Rimuovo il translateX per mantenere la centratura */
+  /* Rimuovo il translateX per mantenere la centratura */
 }
 
 .techItem {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #ffffff;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .techItem::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    border-radius: inherit;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: inherit;
 }
 
 .techItem:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Link del progetto */
 .projectLink {
-    position: absolute;
-    top: 30px;
-    right: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    z-index: 10;
-    width: 24px;
-    height: 24px;
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+  width: 24px;
+  height: 24px;
 }
 
 .linkIconWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .linkIconWrapper img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
-    opacity: 0.7;
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
 .projectLink:hover .linkIconWrapper img {
-    opacity: 1;
-    transform: translateY(-3px);
-    filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
+  opacity: 1;
+  transform: translateY(-3px);
+  filter: brightness(0) invert(1)
+    drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
 }
 
 .projectFrame.illuminated .linkIconWrapper img {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 /* Wrapper immagine */
 .projectImageWrapper {
-    position: relative;
-    flex: 1;
-    width: 100%;
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.6s ease;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s ease;
 }
 
 .projectFrame.illuminated .projectImageWrapper {
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 40px rgba(102, 126, 234, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 8px 32px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 126, 234, 0.1);
 }
 
 /* Overlay dell'immagine */
 .imageOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-    z-index: 2;
-    transition: opacity 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  transition: opacity 0.6s ease;
 }
 
 .projectFrame.illuminated .imageOverlay {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* Immagine del progetto */
 .projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.7;
-    transition: all 0.6s ease;
-    position: relative;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.7;
+  transition: all 0.6s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .projectFrame.illuminated .projectImage {
-    opacity: 1;
-    transform: scale(1.05);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* Glow effect sull'immagine */
 .imageGlow {
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    right: -10%;
-    bottom: -10%;
-    background: linear-gradient(135deg,
-            rgba(102, 126, 234, 0.1),
-            rgba(118, 75, 162, 0.1),
-            transparent);
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    z-index: 0;
-    filter: blur(20px);
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1),
+    transparent
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+  filter: blur(20px);
 }
 
 .projectFrame.illuminated .imageGlow {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .projectFrame {
-        width: 90vw;
-        min-width: 300px;
-        height: 70vh;
-        min-height: 450px;
-        max-height: 600px;
-    }
+  .projectFrame {
+    width: 90vw;
+    min-width: 300px;
+    height: 70vh;
+    min-height: 450px;
+    max-height: 600px;
+  }
 
-    .projectContent {
-        padding: 1.5rem;
-        gap: 1.25rem;
-        overflow: hidden;
-    }
+  .projectContent {
+    padding: 1.5rem;
+    gap: 1.25rem;
+    overflow: hidden;
+  }
 
-    .projectHeader {
-        flex-direction: column;
-        gap: 1.25rem;
-        align-items: center;
-        padding: 0 15px 6px 15px;
-        /* Padding ridotto per mobile */
-    }
+  .projectHeader {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 0 15px 6px 15px;
+    /* Padding ridotto per mobile */
+  }
 
-    .projectLink {
-        top: 1.5rem;
-        right: 1.5rem;
-    }
+  .projectLink {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
 
-    .projectInfo {
-        gap: 0.875rem;
-    }
+  .projectInfo {
+    gap: 0.875rem;
+  }
 
-    .projectTitle {
-        font-size: 1.5rem;
-    }
+  .projectTitle {
+    font-size: 1.5rem;
+  }
 
-    .projectTech {
-        gap: 0.5rem;
-    }
+  .projectTech {
+    gap: 0.5rem;
+  }
 
-    .techItem {
-        padding: 0.375rem 0.75rem;
-        font-size: 0.8rem;
-        border-radius: 16px;
-    }
+  .techItem {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 16px;
+  }
 
-    .linkIconWrapper {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-    }
+  .linkIconWrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
 
-    .linkIconWrapper img {
-        width: 20px;
-        height: 20px;
-    }
+  .linkIconWrapper img {
+    width: 20px;
+    height: 20px;
+  }
 
-    .projectImageWrapper {
-        border-radius: 12px;
-    }
+  .projectImageWrapper {
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 600px) {
-    .projectFrame {
-        width: 95vw;
-        min-width: 280px;
-        height: 65vh;
-        min-height: 400px;
-        max-height: 500px;
-        border-radius: 20px;
-    }
+  .projectFrame {
+    width: 95vw;
+    min-width: 280px;
+    height: 65vh;
+    min-height: 400px;
+    max-height: 500px;
+    border-radius: 20px;
+  }
 
-    .projectContent {
-        padding: 1.25rem;
-        gap: 1rem;
-        overflow: hidden;
-    }
+  .projectContent {
+    padding: 1.25rem;
+    gap: 1rem;
+    overflow: hidden;
+  }
 
-    .projectHeader {
-        gap: 1rem;
-        padding: 0 10px 4px 10px;
-        /* Padding minimo per mobile piccolo */
-    }
+  .projectHeader {
+    gap: 1rem;
+    padding: 0 10px 4px 10px;
+    /* Padding minimo per mobile piccolo */
+  }
 
-    .projectLink {
-        top: 1.25rem;
-        right: 1.25rem;
-    }
+  .projectLink {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
 
-    .projectInfo {
-        gap: 0.75rem;
-    }
+  .projectInfo {
+    gap: 0.75rem;
+  }
 
-    .projectTitle {
-        font-size: 1.25rem;
-    }
+  .projectTitle {
+    font-size: 1.25rem;
+  }
 
-    .techItem {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.75rem;
-    }
+  .techItem {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
 
-    .linkIconWrapper {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-    }
+  .linkIconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
 
-    .linkIconWrapper img {
-        width: 18px;
-        height: 18px;
-    }
+  .linkIconWrapper img {
+    width: 18px;
+    height: 18px;
+  }
 
-    /* Ridurre gli effetti hover su mobile */
-    .projectFrame.illuminated {
-        transform: translateY(-4px) scale(1.01);
-    }
+  /* Ridurre gli effetti hover su mobile */
+  .projectFrame.illuminated {
+    transform: translateY(-4px) scale(1.01);
+  }
 }
 
 /* Animazione di entrata */
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px) scale(0.95);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .projectFrame {
-    animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Varianti più intense per schermi grandi */
 @media (min-width: 1200px) {
-    .projectFrame.illuminated {
-        box-shadow:
-            0 16px 64px rgba(0, 0, 0, 0.5),
-            0 0 80px rgba(102, 126, 234, 0.25),
-            inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    }
+  .projectFrame.illuminated {
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5),
+      0 0 80px rgba(102, 126, 234, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
 
-    .projectFrame.illuminated .imageGlow {
-        filter: blur(30px);
-    }
+  .projectFrame.illuminated .imageGlow {
+    filter: blur(30px);
+  }
 }
