@@ -1,6 +1,30 @@
 {
   "progetti": [
     {
+      "nome": "Professionify",
+      "tech": [
+        {
+          "title": "React.js",
+          "color": "#3996b8"
+        },
+        {
+          "title": "Express.js",
+          "color": "#3c863b"
+        },
+        {
+          "title": "Supabase",
+          "color": "#44d093"
+        },
+        {
+          "title": "Work in progress",
+          "color": "#E18741"
+        }
+      ],
+      "url": "https://github.com/Channilol/Professionify_react",
+      "description": "Tool AI per formattare testi in base ai modelli e parametri selezionati",
+      "image_url": "ProfessionifyGif.gif"
+    },
+    {
       "nome": "Pokenav Web",
       "tech": [
         {
@@ -87,18 +111,6 @@
       "url": "https://github.com/Channilol/PokeCollectorFRONTEND",
       "image_file": "PokeCollector.png",
       "description": "E-Commerce di carte Pokemon realizzato con React.js per il frontend e .NET per il backend, con un database SQL gestito con entity framework"
-    },
-    {
-      "nome": "Weather App",
-      "tech": [
-        {
-          "title": "React.js",
-          "color": "#3996b8"
-        }
-      ],
-      "url": "https://github.com/Channilol/WeatherWebAppReact",
-      "image_url": "WeatherApp.png",
-      "description": "WebApp realizzata con react.js per tenere traccia del meteo"
     }
   ]
 }
